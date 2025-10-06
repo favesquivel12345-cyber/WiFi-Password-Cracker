@@ -1,5 +1,4 @@
 import subprocess
-
 def process_wifi():
     data = subprocess.check_output(['netsh', 'wlan', 'show', 'profiles']).decode('utf-8').split('\n')
     profiles = [i.split(":")[1][1:-1] for i in data if "All User Profile" in i]
@@ -25,7 +24,10 @@ print("Copyright 2024 - Shabir Mahfudz Prahono")
 print()
 terms = input("Agree Terms and Conditions ? (Y/n) ")
 if terms.lower() == 'y':
+
+
     print("-"*70)
+    }
     print("WiFi Name                      | WiFi Password")
     process_wifi()
 else:
